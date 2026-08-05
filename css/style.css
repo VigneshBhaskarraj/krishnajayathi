@@ -1,0 +1,360 @@
+/* ============================================================
+   Krishna Jayanthi — site styles
+   Palette inspired by the printed invite: soft lavender paper,
+   deep plum headings, gold & vermilion accents.
+   ============================================================ */
+
+:root {
+  --paper: #f6f1fa;
+  --paper-deep: #ece2f4;
+  --plum: #4b1256;
+  --plum-soft: #6d2f7a;
+  --vermilion: #c0392b;
+  --gold: #b8860b;
+  --gold-soft: #e6c565;
+  --ink: #2e1f33;
+  --card: #ffffff;
+  --shadow: 0 4px 18px rgba(75, 18, 86, 0.12);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  background:
+    radial-gradient(circle at 8% 4%, rgba(184, 134, 11, 0.10), transparent 32%),
+    radial-gradient(circle at 94% 96%, rgba(109, 47, 122, 0.12), transparent 36%),
+    var(--paper);
+  color: var(--ink);
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+.wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 1.25rem 1rem 4rem;
+}
+
+/* ---------- header ---------- */
+.site-header {
+  text-align: center;
+  padding: 2rem 1rem 1.25rem;
+}
+
+.site-header .pretitle {
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  color: var(--gold);
+}
+
+.site-header h1 {
+  font-size: clamp(1.9rem, 6vw, 3rem);
+  color: var(--plum);
+  letter-spacing: 0.04em;
+  text-shadow: 1px 1px 0 #fff;
+}
+
+.site-header .dates {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.3rem 1.2rem;
+  background: var(--plum);
+  color: #ffe9a8;
+  border-radius: 999px;
+  font-size: 1.05rem;
+  letter-spacing: 0.06em;
+}
+
+.site-header .tagline {
+  margin-top: 0.6rem;
+  font-style: italic;
+  color: var(--plum-soft);
+}
+
+.timings {
+  margin-top: 0.9rem;
+  color: var(--vermilion);
+  font-weight: bold;
+  font-size: 1.02rem;
+}
+
+/* ---------- nav ---------- */
+.site-nav {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.site-nav a {
+  text-decoration: none;
+  color: var(--plum);
+  background: var(--card);
+  border: 1px solid var(--paper-deep);
+  border-radius: 999px;
+  padding: 0.35rem 1.1rem;
+  box-shadow: var(--shadow);
+  font-size: 0.95rem;
+}
+
+.site-nav a:hover, .site-nav a.active {
+  background: var(--plum);
+  color: #ffe9a8;
+}
+
+/* ---------- schedule cards ---------- */
+.section-title {
+  text-align: center;
+  color: var(--plum);
+  margin: 1.6rem 0 1rem;
+  font-size: 1.35rem;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 72px;
+  height: 3px;
+  margin: 0.4rem auto 0;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.day-list { display: grid; gap: 0.7rem; }
+
+.day-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: var(--card);
+  border: 1px solid var(--paper-deep);
+  border-left: 5px solid var(--gold-soft);
+  border-radius: 12px;
+  padding: 0.8rem 1.1rem;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: var(--shadow);
+  transition: transform 0.15s ease;
+}
+
+.day-card:hover { transform: translateY(-2px); border-left-color: var(--vermilion); }
+
+.day-card .date {
+  min-width: 4.6rem;
+  text-align: center;
+  font-weight: bold;
+  color: var(--vermilion);
+  line-height: 1.25;
+}
+
+.day-card .date .dow { display: block; font-size: 0.7rem; color: var(--plum-soft); text-transform: uppercase; letter-spacing: 0.08em; }
+
+.day-card .utsavam { font-size: 1.08rem; color: var(--plum); font-weight: bold; }
+
+.day-card .meta { font-size: 0.82rem; color: #7a6a80; }
+
+.day-card.today {
+  border: 2px solid var(--gold);
+  border-left: 5px solid var(--vermilion);
+  background: linear-gradient(180deg, #fffdf4, #fff);
+}
+
+.badge-today {
+  margin-left: auto;
+  background: var(--vermilion);
+  color: #fff;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+}
+
+/* ---------- day page ---------- */
+.day-hero { text-align: center; margin-bottom: 1.2rem; }
+.day-hero .day-number { color: var(--gold); letter-spacing: 0.3em; text-transform: uppercase; font-size: 0.75rem; }
+.day-hero h2 { color: var(--plum); font-size: clamp(1.5rem, 5vw, 2.2rem); }
+.day-hero .date-line { color: var(--vermilion); font-weight: bold; }
+
+.video-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #1c0f21;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  margin-bottom: 1.6rem;
+}
+
+.video-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+.video-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #e8d9f0;
+  gap: 0.4rem;
+  text-align: center;
+  padding: 1rem;
+}
+
+.video-placeholder .om { font-size: 2.4rem; color: var(--gold-soft); }
+
+/* ---------- songs & lyrics ---------- */
+.song {
+  background: var(--card);
+  border: 1px solid var(--paper-deep);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  margin-bottom: 0.8rem;
+  overflow: hidden;
+}
+
+.song summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 0.85rem 1.1rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.7rem;
+}
+
+.song summary::-webkit-details-marker { display: none; }
+.song summary::after { content: "▾"; margin-left: auto; color: var(--gold); transition: transform 0.2s; }
+.song[open] summary::after { transform: rotate(180deg); }
+
+.song .song-title { color: var(--plum); font-weight: bold; font-size: 1.05rem; }
+.song .song-composer { font-size: 0.82rem; color: #7a6a80; font-style: italic; }
+
+.lyrics {
+  padding: 0 1.1rem 1.1rem;
+  border-top: 1px dashed var(--paper-deep);
+}
+
+.lyrics .stanza { margin: 0.9rem 0; text-align: center; }
+.lyrics .stanza p { margin: 0; font-size: 1.02rem; }
+
+.empty-note, .disclaimer {
+  text-align: center;
+  color: #7a6a80;
+  font-style: italic;
+  padding: 1rem;
+}
+
+/* ---------- day pager ---------- */
+.pager { display: flex; justify-content: space-between; margin-top: 1.6rem; gap: 1rem; }
+.pager a {
+  text-decoration: none;
+  color: var(--plum);
+  background: var(--card);
+  border: 1px solid var(--paper-deep);
+  border-radius: 10px;
+  padding: 0.55rem 1rem;
+  box-shadow: var(--shadow);
+}
+.pager a:hover { background: var(--plum); color: #ffe9a8; }
+.pager .spacer { flex: 1; }
+
+/* ---------- venue / footer ---------- */
+.venue-block {
+  text-align: center;
+  margin-top: 2.2rem;
+  background: var(--card);
+  border: 1px solid var(--paper-deep);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  padding: 1.3rem 1rem;
+}
+
+.venue-block h3 { color: var(--plum); margin-bottom: 0.3rem; }
+.venue-block .gate { color: var(--vermilion); font-weight: bold; margin-top: 0.25rem; }
+
+.site-footer {
+  text-align: center;
+  margin-top: 2.5rem;
+  font-size: 0.85rem;
+  color: #8a7a90;
+}
+
+.site-footer .om { color: var(--gold); font-size: 1.3rem; display: block; margin-bottom: 0.2rem; }
+
+/* ============================================================
+   INVITE PAGE — styled like the printed flyer
+   ============================================================ */
+.invite {
+  max-width: 480px;
+  margin: 1.5rem auto;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(196, 149, 212, 0.35), transparent 40%),
+    radial-gradient(circle at 100% 100%, rgba(230, 197, 101, 0.30), transparent 45%),
+    linear-gradient(170deg, #faf6fd 0%, #f1e7f7 55%, #f8f0e8 100%);
+  border: 6px double var(--gold-soft);
+  border-radius: 18px;
+  padding: 2.2rem 1.6rem;
+  box-shadow: 0 10px 40px rgba(75, 18, 86, 0.25);
+  text-align: center;
+}
+
+.invite .flourish { color: var(--gold); font-size: 1.4rem; letter-spacing: 0.5em; }
+
+.invite h1 {
+  font-size: clamp(1.7rem, 7vw, 2.4rem);
+  color: var(--plum);
+  letter-spacing: 0.05em;
+  margin: 0.4rem 0;
+  text-shadow: 1px 1px 0 #fff;
+}
+
+.invite .invite-dates {
+  display: inline-block;
+  background: var(--plum);
+  color: #ffe9a8;
+  padding: 0.35rem 1.4rem;
+  border-radius: 999px;
+  font-size: 1.15rem;
+  letter-spacing: 0.08em;
+  margin: 0.4rem 0 1rem;
+}
+
+.invite .invite-timings { color: var(--vermilion); font-weight: bold; font-size: 1.05rem; margin-bottom: 1.2rem; }
+
+.invite table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto 1.2rem;
+}
+
+.invite td {
+  padding: 0.32rem 0.4rem;
+  font-size: 0.98rem;
+  border-bottom: 1px dotted rgba(184, 134, 11, 0.35);
+}
+
+.invite td.d { font-weight: bold; color: var(--vermilion); white-space: nowrap; text-align: right; width: 5.2rem; }
+.invite td.u { text-align: left; color: var(--ink); font-weight: 600; }
+
+.invite .invite-venue { margin-top: 0.6rem; }
+.invite .invite-venue h3 { color: var(--plum); }
+.invite .invite-venue .gate { color: var(--vermilion); font-weight: bold; }
+.invite .site-link { margin-top: 1rem; font-size: 0.9rem; color: var(--plum-soft); }
+
+.print-note { text-align: center; font-size: 0.85rem; color: #8a7a90; margin-bottom: 2rem; }
+
+@media print {
+  body { background: #fff; }
+  .site-nav, .print-note, .site-footer { display: none; }
+  .invite { box-shadow: none; margin: 0 auto; }
+}
+
+@media (max-width: 480px) {
+  .day-card { padding: 0.7rem 0.8rem; gap: 0.7rem; }
+  .day-card .date { min-width: 3.9rem; }
+}

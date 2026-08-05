@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Krishna Jayanthi — Daily Recital</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'&gt;&lt;text y='0.9em' font-size='90'&gt;🪈&lt;/text&gt;&lt;/svg&gt;">
+</head>
+<body>
+  <div class="wrap">
+
+    <header class="site-header">
+      <div class="pretitle">॥ Sri Krishnaya Namaha ॥</div>
+      <h1 data-ev="title">Krishna Jayanthi</h1>
+      <div class="dates" data-ev="dates"></div>
+    </header>
+
+    <nav class="site-nav">
+      <a href="index.html">Schedule</a>
+      <a href="day.html" class="active">Today's Recital</a>
+      <a href="invite.html">Invitation</a>
+    </nav>
+
+    <main id="day-root"></main>
+
+    <footer class="site-footer">
+      <span class="om">ॐ</span>
+      <span data-ev="pooja"></span> · <span data-ev="prasad"></span>
+    </footer>
+
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    // If no ?day= given, jump to today's day (or day 1 before the event).
+    (function () {
+      if (new URLSearchParams(location.search).has("day")) return;
+      var now = new Date();
+      var idx = 1;
+      SITE_DATA.days.forEach(function (d, i) {
+        if (!d.date) return;
+        var p = d.date.split("-").map(Number);
+        var dt = new Date(p[0], p[1] - 1, p[2]);
+        if (dt <= now) idx = i + 1;
+      });
+      history.replaceState(null, "", "day.html?day=" + idx);
+    })();
+  </script>
+</body>
+</html>
