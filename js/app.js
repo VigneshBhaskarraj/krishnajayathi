@@ -150,6 +150,7 @@
         const summary = el("summary");
         summary.appendChild(el("span", "song-title", song.title));
         if (song.composer) summary.appendChild(el("span", "song-composer", song.composer));
+        if (song.sample) summary.appendChild(el("span", "badge-sample", "draft"));
         details.appendChild(summary);
 
         details.appendChild(buildLyrics(song));

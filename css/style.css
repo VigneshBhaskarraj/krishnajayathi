@@ -242,6 +242,17 @@ body {
 .lyrics .stanza { margin: 0.9rem 0; text-align: center; }
 .lyrics .stanza p { margin: 0; font-size: 1.02rem; }
 
+.badge-sample {
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #fff;
+  background: var(--gold-soft);
+  border-radius: 999px;
+  padding: 0.1rem 0.5rem;
+  align-self: center;
+}
+
 .stanza-label {
   font-size: 0.75rem;
   letter-spacing: 0.18em;

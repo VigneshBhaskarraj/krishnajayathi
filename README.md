@@ -15,6 +15,20 @@ recital (YouTube video + song list + lyrics).
 No build step, no dependencies — plain HTML/CSS/JS. Open `index.html`
 directly in a browser, or host on GitHub Pages / Netlify as-is.
 
+## Hosting
+
+The site auto-deploys to **GitHub Pages** on every push
+(`.github/workflows/pages.yml`):
+
+> https://vigneshbhaskarraj.github.io/krishnajayathi/
+
+If the first deploy fails, enable Pages once in the repo:
+**Settings → Pages → Source: GitHub Actions**, then re-run the workflow.
+
+Songs marked with a small **draft** tag on the site are traditional
+placeholder chants — they show the look and feel until the real song list
+is extracted from the kalakshepam playlist.
+
 ## How to update content
 
 Everything editable lives in **`js/data.js`**:

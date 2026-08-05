@@ -56,14 +56,52 @@ const SITE_DATA = {
         {
           title: "Hare Krishna Maha Mantra",
           composer: "Traditional",
-          lyrics: [
-            [
-              "Hare Krishna Hare Krishna",
-              "Krishna Krishna Hare Hare",
-              "Hare Rama Hare Rama",
-              "Rama Rama Hare Hare"
+          sample: true,
+          lyrics: {
+            tamil: [
+              [
+                "ஹரே க்ருஷ்ண ஹரே க்ருஷ்ண",
+                "க்ருஷ்ண க்ருஷ்ண ஹரே ஹரே",
+                "ஹரே ராம ஹரே ராம",
+                "ராம ராம ஹரே ஹரே"
+              ]
+            ],
+            english: [
+              [
+                "Hare Krishna Hare Krishna",
+                "Krishna Krishna Hare Hare",
+                "Hare Rama Hare Rama",
+                "Rama Rama Hare Hare"
+              ]
             ]
-          ]
+          }
+        },
+        {
+          title: "Jaya Radha Madhava",
+          composer: "Traditional (Sampradaya Kirtan)",
+          sample: true,
+          lyrics: {
+            tamil: [
+              [
+                "ஜய ராதா மாதவ குஞ்ஜ விஹாரீ",
+                "கோபீ ஜன வல்லப கிரிவர தாரீ"
+              ],
+              [
+                "யசோதா நந்தன வ்ரஜ ஜன ரஞ்ஜன",
+                "யமுனா தீர வனசாரீ"
+              ]
+            ],
+            english: [
+              [
+                "jaya rAdhA mAdhava kunja vihArI",
+                "gOpI jana vallabha girivara dhArI"
+              ],
+              [
+                "yashOdA nandana vraja jana ranjana",
+                "yamunA tIra vanachArI"
+              ]
+            ]
+          }
         }
       ]
     },
@@ -76,20 +114,37 @@ const SITE_DATA = {
         {
           title: "Madhurashtakam",
           composer: "Sri Vallabhacharya",
-          lyrics: [
-            [
-              "Adharam madhuram vadanam madhuram",
-              "Nayanam madhuram hasitam madhuram",
-              "Hridayam madhuram gamanam madhuram",
-              "Madhuraadhipater akhilam madhuram"
+          sample: true,
+          lyrics: {
+            tamil: [
+              [
+                "அதரம் மதுரம் வதனம் மதுரம்",
+                "நயனம் மதுரம் ஹஸிதம் மதுரம்",
+                "ஹ்ருதயம் மதுரம் கமனம் மதுரம்",
+                "மதுராதிபதேர் அகிலம் மதுரம்"
+              ],
+              [
+                "வசனம் மதுரம் சரிதம் மதுரம்",
+                "வஸனம் மதுரம் வலிதம் மதுரம்",
+                "சலிதம் மதுரம் ப்ரமிதம் மதுரம்",
+                "மதுராதிபதேர் அகிலம் மதுரம்"
+              ]
             ],
-            [
-              "Vachanam madhuram charitam madhuram",
-              "Vasanam madhuram valitam madhuram",
-              "Chalitam madhuram bhramitam madhuram",
-              "Madhuraadhipater akhilam madhuram"
+            english: [
+              [
+                "adharam madhuram vadanam madhuram",
+                "nayanam madhuram hasitam madhuram",
+                "hridayam madhuram gamanam madhuram",
+                "madhurAdhipater akhilam madhuram"
+              ],
+              [
+                "vachanam madhuram charitam madhuram",
+                "vasanam madhuram valitam madhuram",
+                "chalitam madhuram bhramitam madhuram",
+                "madhurAdhipater akhilam madhuram"
+              ]
             ]
-          ]
+          }
         }
       ]
     },
@@ -98,35 +153,155 @@ const SITE_DATA = {
       utsavam: "Radha Damodar",
       youtubeId: null,
       playlistId: null,
-      songs: []
+      songs: [
+        {
+          title: "Sri Damodarashtakam",
+          composer: "Padma Puranam (Satyavrata Muni)",
+          sample: true,
+          lyrics: {
+            tamil: [
+              [
+                "நமாமீஶ்வரம் ஸச்சிதானந்த ரூபம்",
+                "லஸத் குண்டலம் கோகுலே ப்ராஜமானம்",
+                "யசோதா பியோலூகலாத் தாவமானம்",
+                "பராம்ருஷ்டம் அத்யந்ததோ த்ருத்ய கோப்யா"
+              ]
+            ],
+            english: [
+              [
+                "namAmIshvaram sachchidAnanda rUpam",
+                "lasat kuNDalam gOkulE bhrAjamAnam",
+                "yashOdA bhiyOlUkhalAd dhAvamAnam",
+                "parAmRShTam atyantatO drutya gOpyA"
+              ]
+            ]
+          }
+        }
+      ]
     },
     {
       date: "2026-08-31",
       utsavam: "Banke Bihari",
       youtubeId: null,
       playlistId: null,
-      songs: []
+      songs: [
+        {
+          title: "Govinda Jaya Jaya",
+          composer: "Traditional (Namavali)",
+          sample: true,
+          lyrics: {
+            tamil: [
+              [
+                "கோவிந்த ஜய ஜய கோபால ஜய ஜய",
+                "ராதா ரமண ஹரி கோவிந்த ஜய ஜய"
+              ]
+            ],
+            english: [
+              [
+                "gOvinda jaya jaya gOpAla jaya jaya",
+                "rAdhA ramaNa hari gOvinda jaya jaya"
+              ]
+            ]
+          }
+        }
+      ]
     },
     {
       date: "2026-09-01",
       utsavam: "Radha Raman",
       youtubeId: null,
       playlistId: null,
-      songs: []
+      songs: [
+        {
+          title: "Radhe Govinda Bhajo",
+          composer: "Traditional (Namavali)",
+          sample: true,
+          lyrics: {
+            tamil: [
+              [
+                "ராதே கோவிந்த ராதே கோவிந்த",
+                "ராதே கோவிந்த பஜோ ராதே கோவிந்த"
+              ]
+            ],
+            english: [
+              [
+                "rAdhE gOvinda rAdhE gOvinda",
+                "rAdhE gOvinda bhajO rAdhE gOvinda"
+              ]
+            ]
+          }
+        }
+      ]
     },
     {
       date: "2026-09-02",
       utsavam: "Radha Madan Mohan",
       youtubeId: null,
       playlistId: null,
-      songs: []
+      songs: [
+        {
+          title: "Jaya Bolo Madana Mohana",
+          composer: "Traditional (Namavali)",
+          sample: true,
+          lyrics: {
+            tamil: [
+              [
+                "ஜய போலோ மதன மோஹன",
+                "முராரி லால் கீ ஜய"
+              ],
+              [
+                "மதன மோஹன முராரி",
+                "ஜய ஜய மதன மோஹன முராரி"
+              ]
+            ],
+            english: [
+              [
+                "jaya bOlO madana mOhana",
+                "murAri lAl kI jaya"
+              ],
+              [
+                "madana mOhana murAri",
+                "jaya jaya madana mOhana murAri"
+              ]
+            ]
+          }
+        }
+      ]
     },
     {
       date: "2026-09-03",
       utsavam: "Radha Govind Dev",
       youtubeId: null,
       playlistId: null,
-      songs: []
+      songs: [
+        {
+          title: "Govinda Damodara Madhaveti",
+          composer: "Sri Bilvamangala Thakura",
+          sample: true,
+          lyrics: {
+            tamil: [
+              [
+                "ஶ்ரீ க்ருஷ்ண கோவிந்த ஹரே முராரே",
+                "ஹே நாத நாராயண வாஸுதேவ"
+              ],
+              [
+                "ஜிஹ்வே பிபஸ்வாம்ருதம் ஏதத் ஏவ",
+                "கோவிந்த தாமோதர மாதவேதி"
+              ]
+            ],
+            english: [
+              [
+                "shrI kriShNa gOvinda harE murArE",
+                "hE nAtha nArAyaNa vAsudEva"
+              ],
+              [
+                "jihvE pibasvAmRtam Etad Eva",
+                "gOvinda dAmOdara mAdhavEti"
+              ]
+            ]
+          }
+        }
+      ]
     },
     {
       date: "2026-09-04",
@@ -137,14 +312,25 @@ const SITE_DATA = {
         {
           title: "Achyutashtakam",
           composer: "Sri Adi Shankaracharya",
-          lyrics: [
-            [
-              "Achyutam Keshavam Rama Narayanam",
-              "Krishna Damodaram Vasudevam Harim",
-              "Shridharam Madhavam Gopika Vallabham",
-              "Janaki Nayakam Ramachandram Bhaje"
+          sample: true,
+          lyrics: {
+            tamil: [
+              [
+                "அச்யுதம் கேசவம் ராம நாராயணம்",
+                "க்ருஷ்ண தாமோதரம் வாஸுதேவம் ஹரிம்",
+                "ஶ்ரீதரம் மாதவம் கோபிகா வல்லபம்",
+                "ஜானகீ நாயகம் ராமச்சந்த்ரம் பஜே"
+              ]
+            ],
+            english: [
+              [
+                "achyutam kEshavam rAma nArAyaNam",
+                "kriShNa dAmOdaram vAsudEvam harim",
+                "shrIdharam mAdhavam gOpikA vallabham",
+                "jAnakI nAyakam rAmachchandram bhajE"
+              ]
             ]
-          ]
+          }
         }
       ]
     },
@@ -153,7 +339,35 @@ const SITE_DATA = {
       utsavam: "Nandha Utsav",
       youtubeId: null,
       playlistId: null,
-      songs: []
+      songs: [
+        {
+          title: "Nanda Ke Anand Bhayo",
+          composer: "Traditional",
+          sample: true,
+          lyrics: {
+            tamil: [
+              [
+                "நந்த கே ஆனந்த பயோ",
+                "ஜய கன்ஹையா லால் கீ"
+              ],
+              [
+                "ஹாதீ கோடா பால்கீ",
+                "ஜய கன்ஹையா லால் கீ"
+              ]
+            ],
+            english: [
+              [
+                "nanda kE Anand bhayO",
+                "jaya kanhaiyA lAl kI"
+              ],
+              [
+                "hAthI ghODA pAlkI",
+                "jaya kanhaiyA lAl kI"
+              ]
+            ]
+          }
+        }
+      ]
     },
     {
       date: "2026-09-06",
@@ -170,7 +384,7 @@ const SITE_DATA = {
                 label: "Pallavi",
                 lines: [
                   "ரஹஸ்ய மந்த்ரம்",
-                  "ராதா₄ மந்த்ரம்"
+                  "ராதா மந்த்ரம்"
                 ]
               },
               {
@@ -184,7 +398,7 @@ const SITE_DATA = {
               {
                 label: "Charanam 2",
                 lines: [
-                  "ப்ரேமரஸப்ரத₃ மந்த்ரம்",
+                  "ப்ரேமரஸப்ரத மந்த்ரம்",
                   "அப்ரமேய க்ருஷ்ண வஶீகர மந்த்ரம்",
                   "— ரஹஸ்ய மந்த்ரம் —"
                 ]
@@ -192,8 +406,8 @@ const SITE_DATA = {
               {
                 label: "Charanam 3",
                 lines: [
-                  "ஶுகமுனி ஹ்ருத₃ய த்₄யான மந்த்ரம்",
-                  "ஸுக₂ முரளீத₄ர ப்ராண மந்த்ரம்",
+                  "ஶுகமுனி ஹ்ருதய த்யான மந்த்ரம்",
+                  "ஸுக முரளீதர ப்ராண மந்த்ரம்",
                   "— ரஹஸ்ய மந்த்ரம் —"
                 ]
               }
