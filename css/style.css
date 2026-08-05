@@ -330,6 +330,113 @@ body {
 .site-footer .om { color: var(--gold); font-size: 1.3rem; display: block; margin-bottom: 0.2rem; }
 
 /* ============================================================
+   JOURNEY PAGE — Krishna's footprints through Vrindavan
+   ============================================================ */
+.journey-intro {
+  text-align: center;
+  color: var(--plum-soft);
+  font-style: italic;
+  max-width: 34rem;
+  margin: 0 auto 0.6rem;
+}
+
+.journey-wrap {
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.journey-wrap svg { width: 100%; height: auto; display: block; }
+
+.river-outer {
+  fill: none;
+  stroke: #9ec8e8;
+  stroke-width: 16;
+  stroke-linecap: round;
+  opacity: 0.35;
+}
+
+.river-inner {
+  fill: none;
+  stroke: #cfe6f7;
+  stroke-width: 6;
+  stroke-linecap: round;
+  opacity: 0.6;
+}
+
+.river-label {
+  font-family: Georgia, serif;
+  font-size: 13px;
+  letter-spacing: 0.35em;
+  fill: #7fb3d6;
+}
+
+.trail {
+  fill: none;
+  stroke: var(--gold-soft);
+  stroke-width: 2.5;
+  stroke-dasharray: 1 9;
+  stroke-linecap: round;
+  opacity: 0.9;
+}
+
+.footprint { fill: var(--gold); opacity: 0.55; }
+
+.stop { cursor: pointer; text-decoration: none; }
+
+.stop-dot {
+  fill: #fff;
+  stroke: var(--gold);
+  stroke-width: 2.5;
+  filter: drop-shadow(0 2px 4px rgba(75, 18, 86, 0.25));
+}
+
+.stop-visited .stop-dot { fill: var(--plum); stroke: var(--plum-soft); }
+.stop-today .stop-dot { fill: var(--vermilion); stroke: var(--gold); stroke-width: 3; }
+.stop-future .stop-dot { fill: #fff; }
+
+.stop-num {
+  font-family: Georgia, serif;
+  font-size: 15px;
+  font-weight: bold;
+  fill: var(--plum);
+  pointer-events: none;
+}
+
+.stop-visited .stop-num, .stop-today .stop-num { fill: #ffe9a8; }
+
+.stop-name {
+  font-family: Georgia, serif;
+  font-size: 16px;
+  font-weight: bold;
+  fill: var(--plum);
+}
+
+.stop-date {
+  font-family: Georgia, serif;
+  font-size: 12px;
+  fill: #8a7a90;
+}
+
+.stop:hover .stop-name { fill: var(--vermilion); }
+.stop:hover .stop-dot { stroke: var(--vermilion); }
+
+.halo {
+  fill: none;
+  stroke: var(--vermilion);
+  stroke-width: 2;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: halo-pulse 2s ease-out infinite;
+}
+
+@keyframes halo-pulse {
+  0% { transform: scale(1); opacity: 0.9; }
+  100% { transform: scale(1.9); opacity: 0; }
+}
+
+.journey-mark { font-size: 26px; }
+
+/* ============================================================
    INVITE PAGE — styled like the printed flyer
    ============================================================ */
 .invite {

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Krishna Jayanthi</title>
+  <title>Krishna Jayanthi — Krishna's Footprints</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="icon" href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'&gt;&lt;text y='0.9em' font-size='90'&gt;🪈&lt;/text&gt;&lt;/svg&gt;">
 </head>
@@ -14,38 +14,32 @@
       <div class="pretitle">॥ Sri Krishnaya Namaha ॥</div>
       <h1 data-ev="title">Krishna Jayanthi</h1>
       <div class="dates" data-ev="dates"></div>
-      <p class="tagline" data-ev="tagline"></p>
-      <div class="timings">
-        <div data-ev="pooja"></div>
-        <div data-ev="prasad"></div>
-      </div>
+      <p class="tagline">Krishna's Footprints — a journey through Vrindavan</p>
     </header>
 
     <nav class="site-nav">
-      <a href="index.html" class="active">Schedule</a>
-      <a href="journey.html">Journey</a>
+      <a href="index.html">Schedule</a>
+      <a href="journey.html" class="active">Journey</a>
       <a href="day.html">Today's Recital</a>
       <a href="invite.html">Invitation</a>
     </nav>
 
-    <h2 class="section-title">Utsavam Schedule</h2>
-    <div class="day-list" id="schedule"></div>
+    <p class="journey-intro">
+      Follow the footprints — each stop is one evening of the utsavam.
+      Tap a stop to open that day's recital and lyrics.
+    </p>
 
-    <section class="venue-block">
-      <h3>Venue</h3>
-      <div data-ev="venue-address"></div>
-      <div data-ev="venue-city"></div>
-      <div class="gate" data-gate></div>
-    </section>
+    <div class="journey-wrap" id="journey"></div>
 
     <footer class="site-footer">
       <span class="om">ॐ</span>
-      Follow along each day — open the day's page for the recital video and lyrics.
+      <span data-ev="pooja"></span> · <span data-ev="prasad"></span>
     </footer>
 
   </div>
 
   <script src="js/data.js"></script>
   <script src="js/app.js"></script>
+  <script src="js/journey.js"></script>
 </body>
 </html>
