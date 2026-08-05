@@ -152,16 +152,7 @@
         if (song.composer) summary.appendChild(el("span", "song-composer", song.composer));
         details.appendChild(summary);
 
-        const lyr = el("div", "lyrics");
-        (song.lyrics || []).forEach(function (stanza) {
-          const s = el("div", "stanza");
-          stanza.forEach(function (line) { s.appendChild(el("p", null, line)); });
-          lyr.appendChild(s);
-        });
-        if (!song.lyrics || !song.lyrics.length) {
-          lyr.appendChild(el("p", "empty-note", "Lyrics coming soon."));
-        }
-        details.appendChild(lyr);
+        details.appendChild(buildLyrics(song));
         root.appendChild(details);
       });
     }
@@ -180,6 +171,71 @@
       pager.appendChild(next);
     }
     root.appendChild(pager);
+  }
+
+  /* ---------- lyrics rendering ----------
+     song.lyrics can be either:
+       - an array of stanzas (each stanza an array of lines), or
+       - { tamil: [stanzas], english: [stanzas] } — rendered with a
+         Tamil / English script toggle.
+     A stanza may also be { label, lines } to show a section heading
+     (Pallavi, Charanam, ...). */
+
+  function stanzaNodes(container, stanzas) {
+    stanzas.forEach(function (stanza) {
+      const lines = Array.isArray(stanza) ? stanza : stanza.lines;
+      const s = el("div", "stanza");
+      if (!Array.isArray(stanza) && stanza.label) {
+        s.appendChild(el("div", "stanza-label", stanza.label));
+      }
+      lines.forEach(function (line) { s.appendChild(el("p", null, line)); });
+      container.appendChild(s);
+    });
+  }
+
+  function buildLyrics(song) {
+    const lyr = el("div", "lyrics");
+    const L = song.lyrics;
+
+    if (!L || (Array.isArray(L) && !L.length)) {
+      lyr.appendChild(el("p", "empty-note", "Lyrics coming soon."));
+      return lyr;
+    }
+
+    if (Array.isArray(L)) {
+      stanzaNodes(lyr, L);
+      return lyr;
+    }
+
+    // dual-script: toggle between Tamil and English
+    const toggle = el("div", "script-toggle");
+    const panes = {};
+    const scripts = [];
+    if (L.tamil && L.tamil.length) scripts.push(["tamil", "தமிழ்"]);
+    if (L.english && L.english.length) scripts.push(["english", "English"]);
+
+    scripts.forEach(function (pair, i) {
+      const key = pair[0];
+      const btn = el("button", "script-btn" + (i === 0 ? " active" : ""), pair[1]);
+      btn.type = "button";
+      btn.addEventListener("click", function () {
+        toggle.querySelectorAll(".script-btn").forEach(function (b) { b.classList.remove("active"); });
+        btn.classList.add("active");
+        Object.keys(panes).forEach(function (k) {
+          panes[k].style.display = k === key ? "" : "none";
+        });
+      });
+      toggle.appendChild(btn);
+
+      const pane = el("div", "script-pane");
+      if (i !== 0) pane.style.display = "none";
+      stanzaNodes(pane, L[key]);
+      panes[key] = pane;
+    });
+
+    if (scripts.length > 1) lyr.appendChild(toggle);
+    Object.keys(panes).forEach(function (k) { lyr.appendChild(panes[k]); });
+    return lyr;
   }
 
   /* ---------- invite page ---------- */

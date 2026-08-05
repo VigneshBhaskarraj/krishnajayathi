@@ -242,6 +242,38 @@ body {
 .lyrics .stanza { margin: 0.9rem 0; text-align: center; }
 .lyrics .stanza p { margin: 0; font-size: 1.02rem; }
 
+.stanza-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.2rem;
+}
+
+.script-toggle {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  padding-top: 0.9rem;
+}
+
+.script-btn {
+  font-family: inherit;
+  font-size: 0.88rem;
+  cursor: pointer;
+  border: 1px solid var(--paper-deep);
+  background: var(--paper);
+  color: var(--plum);
+  border-radius: 999px;
+  padding: 0.25rem 1rem;
+}
+
+.script-btn.active {
+  background: var(--plum);
+  color: #ffe9a8;
+  border-color: var(--plum);
+}
+
 .empty-note, .disclaimer {
   text-align: center;
   color: #7a6a80;
